@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="http://getbootstrap.com/favicon.ico">-->
+
+    <title>Supporting material for the article</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.2-dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="index_arquivos/justified-nav.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+   
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+   <script type='text/javascript' src='bootstrap-3.3.2-dist/js/jquery.min.js'></script>
+    
+  <script type="text/javascript">
+    jQuery(document).ready(function($) { 
+    $(".scroll").click(function(event){        
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 400);
+        $('.active').removeClass('active');
+        $(this).parent().addClass('active');
+    });
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(function() {
+        $(window).scroll(function(){
+
+            var topo = $('.jumbotron').height() + 81; // altura do topo
+            var scrollTop = $(window).scrollTop(); // qto foi rolado a barra
+            var tamPagina = $(document).height(); // altura da página
+            var larPagina = $(document).width(); // altura da página
+            var larguraMenu = $('#menu').width();
+
+            if((2 * larguraMenu) < larPagina){ //movimenta o menu apenas se o modo mobile não estiver ativo
+
+              if(scrollTop > topo){
+                  $('#menu').css({'width' : larguraMenu+'px', 'position' : 'absolute', 'z-index':'9','margin-top' : scrollTop - (topo-5)});
+              }else{
+                  $('#menu').css({'position' : 'relative', 'margin-top' : 0});
+              }               
+            }
+
+        });
+    });
+  </script>
+
+  </head>
+
+  <body id="topo">
+
+    <div class="container">
+      <!--
+      <div class="masthead">
+        <h3 class="text-muted">Project name</h3>
+        <nav>
+          <ul class="nav nav-justified">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div> -->
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <p class="creditos">Supporting material for the paper</p>
+        <h3>An Empirical Study of Cohesion and Coupling: Balancing Optimisation and Disruption</h3>
+        <hr />
+        <p class="text">By <a href="http://www0.cs.ucl.ac.uk/staff/m.paixao/" target="_blank">Matheus Paixao</a>, <a href="http://www0.cs.ucl.ac.uk/staff/M.Harman/" target="_blank">Mark Harman</a>, <a href="http://www0.cs.ucl.ac.uk/staff/Yuanyuan.Zhang/" target="_blank">Yuanyuan Zhang</a> and <a href="http://mcs.open.ac.uk/yy66/" target="_blank">Yijun Yu</a></p>
+      </div>
+
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-2">
+          
+          
+            <ul id="menu" class="nav nav-pills nav-stacked bg-info">
+                  <li class="active"><a href="#topo" class="scroll"><span class="glyphicon glyphicon-home"></span>  Contents</a></li>
+                  <li><a href="#abstract" class="scroll"><i class="fa fa-list-alt fa-fw"></i>1 - Abstract</a></li>
+                  <li><a href="#datasets" class="scroll"><i class="fa fa-file-o fa-fw"></i>2 - Datasets</a></li>
+                  <li><a href="#results" class="scroll"><i class="fa fa-bar-chart-o fa-fw"></i>3 - Results</a></li>
+            </ul><br/>
+        
+        </div>
+        <div class="col-lg-10">
+
+          <h2 id="abstract">1 - Abstract</h2>
+          <p>
+
+            Search based software engineering has been extensively applied to the problem of finding improved modular structures that maximise cohesion and minimise coupling. However, there has, hitherto, been no longitudinal study of developers' implementations, over a series of sequential releases. Moreover, results validating whether developers respect the fitness functions are scarce, and the potentially disruptive effect of search-based re-modularisation is usually overlooked. We present an empirical study of 233 sequential releases of 10 different systems; the largest empirical study reported in the literature so far, and the first longitudinal study. Our results provide evidence that developers do, indeed, respect the fitness functions used to optimise cohesion/coupling (they are statistically significantly better than arbitrary choices with p<<0.01), yet they also leave considerable room for further improvement (cohesion/coupling can be improved by 25% on average). However, we also report that optimising the structure is highly disruptive (on average more than 57% of the structure must change), while our results reveal that developers tend to avoid such disruption. Therefore, we introduce and evaluate a multiobjective evolutionary approach that minimises disruption while maximising cohesion/coupling improvement. This allows developers to balance reticence to disrupt existing modular structure, against their competing need to improve cohesion and coupling. The multiobjective approach is able to find modular structures that improve the cohesion of developers' implementations by 22.52%, while causing an acceptably low level of disruption (within that already tolerated by developers).
+          </p>
+          <p><b>Keywords:</b> Software Modularisation, Software Evolution, Multiobjective Search.
+
+          </p>
+          <hr/>
+         
+         <h2 id="datasets">2 - Datasets</h2>
+          <p>
+               Download the 233 modularisation datasets by clicking <a href="files/datasets.zip">here</a>
+           </p> 
+           <hr/>  
+
+           <h2 id="results">3 - Results</h2>
+               Download the raw results for each research question: <a href="files/results/rq1.zip">rq1</a>, <a href="files/results/rq2.zip">rq2</a>, <a href="files/results/rq3.zip">rq3</a>, <a href="files/results/rq4.zip">rq4</a>, <a href="files/results/rq5.zip">rq5</a>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>March 2017 (last update: March 2017) </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="index_arquivos/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body></html>
